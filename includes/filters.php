@@ -127,6 +127,9 @@ function _wo_method_me ( $token = null ) {
 	 * Sooooo. We shall provide it. (at least for Moodle)
 	 */
 	$me_data['email'] = $me_data['user_email'];
+	
+	//NOTE TLT added this to get user meta data
+	$me_data['user_meta'] = get_user_meta($token['user_id']);
 
 	$response = new OAuth2\Response( $me_data );
 	$response->send();
